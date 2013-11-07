@@ -577,7 +577,7 @@ AC_SUBST(DEBUG)
 AC_SUBST(PROFILE)
 
 AC_CONFIG_FILES([
-  Makefile 
+  Makefile
   lib/Makefile
   lib/arm/armopts.s
   include/Makefile include/theora/Makefile

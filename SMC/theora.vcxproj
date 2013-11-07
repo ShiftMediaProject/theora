@@ -184,6 +184,11 @@ copy ..\include\theora\*.h $(OutputPath)\include\theora
 mkdir $(OutputPath)\licenses
 copy ..\COPYING $(OutputPath)\licenses\theora.txt</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>if exist ..\config.h (
+del ..\config.h
+)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -214,6 +219,11 @@ copy ..\include\theora\*.h $(OutputPath)\include\theora
 mkdir $(OutputPath)\licenses
 copy ..\COPYING $(OutputPath)\licenses\theora.txt</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>if exist ..\config.h (
+del ..\config.h
+)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
     <ClCompile>
@@ -245,6 +255,11 @@ copy ..\include\theora\*.h $(OutputPath)\include\theora
 mkdir $(OutputPath)\licenses
 copy ..\COPYING $(OutputPath)\licenses\theora.txt</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>if exist ..\config.h (
+del ..\config.h
+)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
     <ClCompile>
@@ -276,6 +291,11 @@ copy ..\include\theora\*.h $(OutputPath)\include\theora
 mkdir $(OutputPath)\licenses
 copy ..\COPYING $(OutputPath)\licenses\theora.txt</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>if exist ..\config.h (
+del ..\config.h
+)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -318,6 +338,11 @@ copy ..\include\theora\*.h $(OutputPath)\include\theora
 mkdir $(OutputPath)\licenses
 copy ..\COPYING $(OutputPath)\licenses\theora.txt</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>if exist ..\config.h (
+del ..\config.h
+)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -360,6 +385,11 @@ copy ..\include\theora\*.h $(OutputPath)\include\theora
 mkdir $(OutputPath)\licenses
 copy ..\COPYING $(OutputPath)\licenses\theora.txt</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>if exist ..\config.h (
+del ..\config.h
+)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
     <ClCompile>
@@ -403,6 +433,11 @@ copy ..\include\theora\*.h $(OutputPath)\include\theora
 mkdir $(OutputPath)\licenses
 copy ..\COPYING $(OutputPath)\licenses\theora.txt</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>if exist ..\config.h (
+del ..\config.h
+)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
     <ClCompile>
@@ -446,6 +481,11 @@ copy ..\include\theora\*.h $(OutputPath)\include\theora
 mkdir $(OutputPath)\licenses
 copy ..\COPYING $(OutputPath)\licenses\theora.txt</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>if exist ..\config.h (
+del ..\config.h
+)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\include\theora\codec.h" />

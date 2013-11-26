@@ -180,6 +180,9 @@ copy ..\COPYING $(OutputPath)\licenses\theora.txt</Command>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
 del ..\config.h
+)
+if exist $(OutDir)\include\theora (
+rd /s /q $(OutDir)\include\theora
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -216,6 +219,9 @@ copy ..\COPYING $(OutputPath)\licenses\theora.txt</Command>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
 del ..\config.h
+)
+if exist $(OutDir)\include\theora (
+rd /s /q $(OutDir)\include\theora
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -253,6 +259,9 @@ copy ..\COPYING $(OutputPath)\licenses\theora.txt</Command>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
 del ..\config.h
+)
+if exist $(OutDir)\include\theora (
+rd /s /q $(OutDir)\include\theora
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -290,6 +299,9 @@ copy ..\COPYING $(OutputPath)\licenses\theora.txt</Command>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
 del ..\config.h
+)
+if exist $(OutDir)\include\theora (
+rd /s /q $(OutDir)\include\theora
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -338,6 +350,9 @@ copy ..\COPYING $(OutputPath)\licenses\theora.txt</Command>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
 del ..\config.h
+)
+if exist $(OutDir)\include\theora (
+rd /s /q $(OutDir)\include\theora
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -386,6 +401,9 @@ copy ..\COPYING $(OutputPath)\licenses\theora.txt</Command>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
 del ..\config.h
+)
+if exist $(OutDir)\include\theora (
+rd /s /q $(OutDir)\include\theora
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -435,6 +453,9 @@ copy ..\COPYING $(OutputPath)\licenses\theora.txt</Command>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
 del ..\config.h
+)
+if exist $(OutDir)\include\theora (
+rd /s /q $(OutDir)\include\theora
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -484,6 +505,9 @@ copy ..\COPYING $(OutputPath)\licenses\theora.txt</Command>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
 del ..\config.h
+)
+if exist $(OutDir)\include\theora (
+rd /s /q $(OutDir)\include\theora
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>

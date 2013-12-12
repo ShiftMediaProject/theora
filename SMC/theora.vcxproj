@@ -157,7 +157,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>false</SDLCheck>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_BIND_TO_CURRENT_CRT_VERSION;WIN32;_DEBUG;_WINDOWS;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_BIND_TO_CURRENT_CRT_VERSION;WIN32;_DEBUG;_WINDOWS;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\include;$(OutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -187,6 +187,8 @@ del ..\config.h
 )
 if exist $(OutDir)\include\theora (
 rd /s /q $(OutDir)\include\theora
+cd ../
+cd $(ProjectDir)
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -196,7 +198,7 @@ rd /s /q $(OutDir)\include\theora
       <Optimization>Disabled</Optimization>
       <SDLCheck>false</SDLCheck>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_BIND_TO_CURRENT_CRT_VERSION;WIN32;_DEBUG;_WINDOWS;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_BIND_TO_CURRENT_CRT_VERSION;WIN32;_DEBUG;_WINDOWS;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\include;$(OutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -226,6 +228,8 @@ del ..\config.h
 )
 if exist $(OutDir)\include\theora (
 rd /s /q $(OutDir)\include\theora
+cd ../
+cd $(ProjectDir)
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -235,7 +239,7 @@ rd /s /q $(OutDir)\include\theora
       <Optimization>Disabled</Optimization>
       <SDLCheck>false</SDLCheck>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_BIND_TO_CURRENT_CRT_VERSION;WIN32;_DEBUG;_WINDOWS;_USRDLL;LIBTHEORA_EXPORTS;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_BIND_TO_CURRENT_CRT_VERSION;WIN32;_DEBUG;_WINDOWS;_USRDLL;LIBTHEORA_EXPORTS;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\include;$(OutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -265,6 +269,8 @@ del ..\config.h
 )
 if exist $(OutDir)\include\theora (
 rd /s /q $(OutDir)\include\theora
+cd ../
+cd $(ProjectDir)
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -274,7 +280,7 @@ rd /s /q $(OutDir)\include\theora
       <Optimization>Disabled</Optimization>
       <SDLCheck>false</SDLCheck>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_BIND_TO_CURRENT_CRT_VERSION;WIN32;_DEBUG;_WINDOWS;_USRDLL;LIBTHEORA_EXPORTS;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_BIND_TO_CURRENT_CRT_VERSION;WIN32;_DEBUG;_WINDOWS;_USRDLL;LIBTHEORA_EXPORTS;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\include;$(OutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -304,6 +310,8 @@ del ..\config.h
 )
 if exist $(OutDir)\include\theora (
 rd /s /q $(OutDir)\include\theora
+cd ../
+cd $(ProjectDir)
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -325,7 +333,7 @@ rd /s /q $(OutDir)\include\theora
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
       <FloatingPointExceptions>false</FloatingPointExceptions>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_BIND_TO_CURRENT_CRT_VERSION;WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_BIND_TO_CURRENT_CRT_VERSION;WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\include;$(OutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
       <DisableSpecificWarnings>4244;4018;4700</DisableSpecificWarnings>
@@ -355,6 +363,8 @@ del ..\config.h
 )
 if exist $(OutDir)\include\theora (
 rd /s /q $(OutDir)\include\theora
+cd ../
+cd $(ProjectDir)
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -376,7 +386,7 @@ rd /s /q $(OutDir)\include\theora
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
       <FloatingPointExceptions>false</FloatingPointExceptions>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_BIND_TO_CURRENT_CRT_VERSION;WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_BIND_TO_CURRENT_CRT_VERSION;WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\include;$(OutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
       <DisableSpecificWarnings>4244;4018;4700</DisableSpecificWarnings>
@@ -406,6 +416,8 @@ del ..\config.h
 )
 if exist $(OutDir)\include\theora (
 rd /s /q $(OutDir)\include\theora
+cd ../
+cd $(ProjectDir)
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -427,7 +439,7 @@ rd /s /q $(OutDir)\include\theora
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
       <FloatingPointExceptions>false</FloatingPointExceptions>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_BIND_TO_CURRENT_CRT_VERSION;WIN32;NDEBUG;_WINDOWS;_USRDLL;LIBTHEORA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_BIND_TO_CURRENT_CRT_VERSION;WIN32;NDEBUG;_WINDOWS;_USRDLL;LIBTHEORA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\include;$(OutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
       <DisableSpecificWarnings>4244;4018;4700</DisableSpecificWarnings>
@@ -457,6 +469,8 @@ del ..\config.h
 )
 if exist $(OutDir)\include\theora (
 rd /s /q $(OutDir)\include\theora
+cd ../
+cd $(ProjectDir)
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -478,7 +492,7 @@ rd /s /q $(OutDir)\include\theora
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
       <FloatingPointExceptions>false</FloatingPointExceptions>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_BIND_TO_CURRENT_CRT_VERSION;WIN32;NDEBUG;_WINDOWS;_USRDLL;LIBTHEORA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_BIND_TO_CURRENT_CRT_VERSION;WIN32;NDEBUG;_WINDOWS;_USRDLL;LIBTHEORA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\include;$(OutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
       <DisableSpecificWarnings>4244;4018;4700</DisableSpecificWarnings>
@@ -508,6 +522,8 @@ del ..\config.h
 )
 if exist $(OutDir)\include\theora (
 rd /s /q $(OutDir)\include\theora
+cd ../
+cd $(ProjectDir)
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>

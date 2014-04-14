@@ -242,7 +242,7 @@
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <ExceptionHandling>false</ExceptionHandling>
-      <DisableSpecificWarnings>4244;4018;4700</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4244;4018;4700;4267</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -283,7 +283,7 @@ cd $(ProjectDir)
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <ExceptionHandling>false</ExceptionHandling>
-      <DisableSpecificWarnings>4244;4018;4700</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4244;4018;4700;4267</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -324,7 +324,7 @@ cd $(ProjectDir)
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <ExceptionHandling>false</ExceptionHandling>
-      <DisableSpecificWarnings>4244;4018;4700</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4244;4018;4700;4267</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <OutputFile>$(OutDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
@@ -365,7 +365,7 @@ cd $(ProjectDir)
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <ExceptionHandling>false</ExceptionHandling>
-      <DisableSpecificWarnings>4244;4018;4700</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4244;4018;4700;4267</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <OutputFile>$(OutDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
@@ -406,7 +406,7 @@ cd $(ProjectDir)
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <ExceptionHandling>false</ExceptionHandling>
-      <DisableSpecificWarnings>4244;4018;4700</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4244;4018;4700;4267</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <OutputFile>$(OutDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
@@ -447,7 +447,7 @@ cd $(ProjectDir)
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <ExceptionHandling>false</ExceptionHandling>
-      <DisableSpecificWarnings>4244;4018;4700</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4244;4018;4700;4267</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <OutputFile>$(OutDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
@@ -498,7 +498,7 @@ cd $(ProjectDir)
       <PreprocessorDefinitions>_BIND_TO_CURRENT_CRT_VERSION;WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\include;$(OutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
-      <DisableSpecificWarnings>4244;4018;4700</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4244;4018;4700;4267</DisableSpecificWarnings>
       <InterproceduralOptimization>SingleFile</InterproceduralOptimization>
     </ClCompile>
     <Link>
@@ -552,7 +552,7 @@ cd $(ProjectDir)
       <PreprocessorDefinitions>_BIND_TO_CURRENT_CRT_VERSION;WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\include;$(OutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
-      <DisableSpecificWarnings>4244;4018;4700</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4244;4018;4700;4267</DisableSpecificWarnings>
       <InterproceduralOptimization>SingleFile</InterproceduralOptimization>
     </ClCompile>
     <Link>
@@ -606,7 +606,7 @@ cd $(ProjectDir)
       <PreprocessorDefinitions>_BIND_TO_CURRENT_CRT_VERSION;WIN32;NDEBUG;_WINDOWS;_USRDLL;LIBTHEORA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\include;$(OutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
-      <DisableSpecificWarnings>4244;4018;4700</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4244;4018;4700;4267</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -659,7 +659,7 @@ cd $(ProjectDir)
       <PreprocessorDefinitions>_BIND_TO_CURRENT_CRT_VERSION;WIN32;NDEBUG;_WINDOWS;_USRDLL;LIBTHEORA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\include;$(OutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
-      <DisableSpecificWarnings>4244;4018;4700</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4244;4018;4700;4267</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -712,7 +712,7 @@ cd $(ProjectDir)
       <PreprocessorDefinitions>_BIND_TO_CURRENT_CRT_VERSION;WIN32;NDEBUG;_WINDOWS;_USRDLL;LIBTHEORA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\include;$(OutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
-      <DisableSpecificWarnings>4244;4018;4700</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4244;4018;4700;4267</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -765,7 +765,7 @@ cd $(ProjectDir)
       <PreprocessorDefinitions>_BIND_TO_CURRENT_CRT_VERSION;WIN32;NDEBUG;_WINDOWS;_USRDLL;LIBTHEORA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\include;$(OutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
-      <DisableSpecificWarnings>4244;4018;4700</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4244;4018;4700;4267</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>

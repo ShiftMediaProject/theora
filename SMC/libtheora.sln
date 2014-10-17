@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "theora", "theora.vcxproj", "{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libtheora", "libtheora.vcxproj", "{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

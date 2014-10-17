@@ -60,7 +60,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}</ProjectGuid>
-    <RootNamespace>theora</RootNamespace>
+    <RootNamespace>libtheora</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

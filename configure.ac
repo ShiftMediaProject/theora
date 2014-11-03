@@ -64,7 +64,7 @@ CFLAGS="$cflags_save"
 
 AM_PROG_CC_C_O
 AC_LIBTOOL_WIN32_DLL
-AM_PROG_LIBTOOL
+LT_INIT
 
 dnl Add parameters for aclocal
 AC_CONFIG_MACRO_DIR([m4])
@@ -187,7 +187,7 @@ else
         case $host in 
         *)
                 DEBUG="-g -Wall -Wno-parentheses -DDEBUG -D__NO_MATH_INLINES"
-                CFLAGS="-Wall -Wno-parentheses -O3 -fforce-addr -fomit-frame-pointer -finline-functions -funroll-loops"
+                CFLAGS="-Wall -Wno-parentheses -O3 -fomit-frame-pointer -finline-functions -funroll-loops"
                 PROFILE="-Wall -Wno-parentheses -pg -g -O3 -fno-inline-functions -DDEBUG";;
         esac
 fi

@@ -291,14 +291,12 @@ rgb_to_yuv(png_bytep *png,
   unsigned int y1;
 
   unsigned long yuv_w;
-  unsigned long yuv_h;
 
   unsigned char *yuv_y;
   unsigned char *yuv_u;
   unsigned char *yuv_v;
 
   yuv_w = ycbcr[0].width;
-  yuv_h = ycbcr[0].height;
 
   yuv_y = ycbcr[0].data;
   yuv_u = ycbcr[1].data;
@@ -333,7 +331,7 @@ rgb_to_yuv(png_bytep *png,
 
         yuv_u[(x >> 1) + (y >> 1) * ycbcr[1].stride] =
           clamp( ((-33488*r0-65744*g0+99232*b0+29032005)/4 +
-                  (-33488*r0-65744*g0+99232*b0+29032005)/4 +
+                  (-33488*r1-65744*g1+99232*b1+29032005)/4 +
                   (-33488*r2-65744*g2+99232*b2+29032005)/4 +
                   (-33488*r3-65744*g3+99232*b3+29032005)/4)/225930);
         yuv_v[(x >> 1) + (y >> 1) * ycbcr[2].stride] =
@@ -463,9 +461,9 @@ png_read(const char *pathname, unsigned int *w, unsigned int *h, th_ycbcr_buffer
   png_set_strip_alpha(png_ptr);
 
   row_data = (png_bytep)png_malloc(png_ptr,
-    3*height*width*png_sizeof(*row_data));
+    3*height*width*sizeof(*row_data));
   row_pointers = (png_bytep *)png_malloc(png_ptr,
-    height*png_sizeof(*row_pointers));
+    height*sizeof(*row_pointers));
   for(y = 0; y < height; y++) {
     row_pointers[y] = row_data + y*(3*width);
   }

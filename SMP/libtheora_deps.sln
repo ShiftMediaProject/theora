@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libtheora", "libtheora.vcxproj", "{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98} = {1C2315EC-E08C-4E8F-AD66-917DC9C30B98}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dependencies", "dependencies", "{F8497C2C-D155-474E-B7A1-D9AF0A599EC2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libogg", "..\..\ogg\SMP\libogg.vcxproj", "{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		DebugDLL|Win32 = DebugDLL|Win32
+		DebugDLL|x64 = DebugDLL|x64
+		DebugDLLSharedDeps|Win32 = DebugDLLSharedDeps|Win32
+		DebugDLLSharedDeps|x64 = DebugDLLSharedDeps|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+		ReleaseDLL|Win32 = ReleaseDLL|Win32
+		ReleaseDLL|x64 = ReleaseDLL|x64
+		ReleaseDLLSharedDeps|Win32 = ReleaseDLLSharedDeps|Win32
+		ReleaseDLLSharedDeps|x64 = ReleaseDLLSharedDeps|x64
+		ReleaseLTO|Win32 = ReleaseLTO|Win32
+		ReleaseLTO|x64 = ReleaseLTO|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.Debug|Win32.Build.0 = Debug|Win32
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.Debug|x64.ActiveCfg = Debug|x64
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.Debug|x64.Build.0 = Debug|x64
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.DebugDLL|Win32.ActiveCfg = DebugDLL|Win32
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.DebugDLL|Win32.Build.0 = DebugDLL|Win32
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.DebugDLL|x64.ActiveCfg = DebugDLL|x64
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.DebugDLL|x64.Build.0 = DebugDLL|x64
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.DebugDLLSharedDeps|Win32.ActiveCfg = DebugDLLStaticDeps|Win32
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.DebugDLLSharedDeps|Win32.Build.0 = DebugDLLStaticDeps|Win32
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.DebugDLLSharedDeps|x64.ActiveCfg = DebugDLLStaticDeps|x64
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.DebugDLLSharedDeps|x64.Build.0 = DebugDLLStaticDeps|x64
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.Release|Win32.ActiveCfg = Release|Win32
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.Release|Win32.Build.0 = Release|Win32
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.Release|x64.ActiveCfg = Release|x64
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.Release|x64.Build.0 = Release|x64
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.ReleaseDLL|Win32.ActiveCfg = ReleaseDLL|Win32
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.ReleaseDLL|Win32.Build.0 = ReleaseDLL|Win32
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.ReleaseDLL|x64.ActiveCfg = ReleaseDLL|x64
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.ReleaseDLL|x64.Build.0 = ReleaseDLL|x64
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.ReleaseDLLSharedDeps|Win32.ActiveCfg = ReleaseDLLStaticDeps|Win32
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.ReleaseDLLSharedDeps|Win32.Build.0 = ReleaseDLLStaticDeps|Win32
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.ReleaseDLLSharedDeps|x64.ActiveCfg = ReleaseDLLStaticDeps|x64
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.ReleaseDLLSharedDeps|x64.Build.0 = ReleaseDLLStaticDeps|x64
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.ReleaseLTO|Win32.ActiveCfg = ReleaseLTO|Win32
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.ReleaseLTO|Win32.Build.0 = ReleaseLTO|Win32
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.ReleaseLTO|x64.ActiveCfg = ReleaseLTO|x64
+		{0D0F22AE-15B2-414B-9BCC-2D1C2278AA87}.ReleaseLTO|x64.Build.0 = ReleaseLTO|x64
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.Debug|Win32.Build.0 = Debug|Win32
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.Debug|x64.ActiveCfg = Debug|x64
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.Debug|x64.Build.0 = Debug|x64
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.DebugDLL|Win32.ActiveCfg = DebugDLL|Win32
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.DebugDLL|Win32.Build.0 = DebugDLL|Win32
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.DebugDLL|x64.ActiveCfg = DebugDLL|x64
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.DebugDLL|x64.Build.0 = DebugDLL|x64
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.DebugDLLSharedDeps|Win32.ActiveCfg = DebugDLL|Win32
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.DebugDLLSharedDeps|Win32.Build.0 = DebugDLL|Win32
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.DebugDLLSharedDeps|x64.ActiveCfg = DebugDLL|x64
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.DebugDLLSharedDeps|x64.Build.0 = DebugDLL|x64
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.Release|Win32.ActiveCfg = Release|Win32
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.Release|Win32.Build.0 = Release|Win32
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.Release|x64.ActiveCfg = Release|x64
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.Release|x64.Build.0 = Release|x64
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.ReleaseDLL|Win32.ActiveCfg = ReleaseDLL|Win32
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.ReleaseDLL|Win32.Build.0 = ReleaseDLL|Win32
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.ReleaseDLL|x64.ActiveCfg = ReleaseDLL|x64
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.ReleaseDLL|x64.Build.0 = ReleaseDLL|x64
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.ReleaseDLLSharedDeps|Win32.ActiveCfg = ReleaseDLL|Win32
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.ReleaseDLLSharedDeps|Win32.Build.0 = ReleaseDLL|Win32
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.ReleaseDLLSharedDeps|x64.ActiveCfg = ReleaseDLL|x64
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.ReleaseDLLSharedDeps|x64.Build.0 = ReleaseDLL|x64
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.ReleaseLTO|Win32.ActiveCfg = ReleaseLTO|Win32
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.ReleaseLTO|Win32.Build.0 = ReleaseLTO|Win32
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.ReleaseLTO|x64.ActiveCfg = ReleaseLTO|x64
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98}.ReleaseLTO|x64.Build.0 = ReleaseLTO|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1C2315EC-E08C-4E8F-AD66-917DC9C30B98} = {F8497C2C-D155-474E-B7A1-D9AF0A599EC2}
+	EndGlobalSection
+EndGlobal

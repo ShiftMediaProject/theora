@@ -323,7 +323,11 @@
 mkdir $(OutDir)\include\theora
 copy ..\include\theora\*.h $(OutDir)\include\theora
 mkdir $(OutDir)\licenses
-copy ..\COPYING $(OutDir)\licenses\theora.txt</Command>
+copy ..\COPYING $(OutDir)\licenses\theora.txt
+if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
+mkdir $(OutDir)\include\ogg
+copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+)</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
@@ -374,7 +378,11 @@ del /f /q $(OutDir)\licenses\theora.txt
 mkdir $(OutDir)\include\theora
 copy ..\include\theora\*.h $(OutDir)\include\theora
 mkdir $(OutDir)\licenses
-copy ..\COPYING $(OutDir)\licenses\theora.txt</Command>
+copy ..\COPYING $(OutDir)\licenses\theora.txt
+if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
+mkdir $(OutDir)\include\ogg
+copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+)</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
@@ -427,7 +435,11 @@ del /f /q $(OutDir)\licenses\theora.txt
 mkdir $(OutDir)\include\theora
 copy ..\include\theora\*.h $(OutDir)\include\theora
 mkdir $(OutDir)\licenses
-copy ..\COPYING $(OutDir)\licenses\theora.txt</Command>
+copy ..\COPYING $(OutDir)\licenses\theora.txt
+if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
+mkdir $(OutDir)\include\ogg
+copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+)</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
@@ -480,7 +492,11 @@ del /f /q $(OutDir)\licenses\theora.txt
 mkdir $(OutDir)\include\theora
 copy ..\include\theora\*.h $(OutDir)\include\theora
 mkdir $(OutDir)\licenses
-copy ..\COPYING $(OutDir)\licenses\theora.txt</Command>
+copy ..\COPYING $(OutDir)\licenses\theora.txt
+if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
+mkdir $(OutDir)\include\ogg
+copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+)</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
@@ -532,7 +548,11 @@ del /f /q $(OutDir)\licenses\theora.txt
 mkdir $(OutDir)\include\theora
 copy ..\include\theora\*.h $(OutDir)\include\theora
 mkdir $(OutDir)\licenses
-copy ..\COPYING $(OutDir)\licenses\theora.txt</Command>
+copy ..\COPYING $(OutDir)\licenses\theora.txt
+if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
+mkdir $(OutDir)\include\ogg
+copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+)</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
@@ -584,7 +604,11 @@ del /f /q $(OutDir)\licenses\theora.txt
 mkdir $(OutDir)\include\theora
 copy ..\include\theora\*.h $(OutDir)\include\theora
 mkdir $(OutDir)\licenses
-copy ..\COPYING $(OutDir)\licenses\theora.txt</Command>
+copy ..\COPYING $(OutDir)\licenses\theora.txt
+if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
+mkdir $(OutDir)\include\ogg
+copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+)</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
@@ -648,7 +672,11 @@ del /f /q $(OutDir)\licenses\theora.txt
 mkdir $(OutDir)\include\theora
 copy ..\include\theora\*.h $(OutDir)\include\theora
 mkdir $(OutDir)\licenses
-copy ..\COPYING $(OutDir)\licenses\theora.txt</Command>
+copy ..\COPYING $(OutDir)\licenses\theora.txt
+if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
+mkdir $(OutDir)\include\ogg
+copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+)</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
@@ -712,7 +740,11 @@ del /f /q $(OutDir)\licenses\theora.txt
 mkdir $(OutDir)\include\theora
 copy ..\include\theora\*.h $(OutDir)\include\theora
 mkdir $(OutDir)\licenses
-copy ..\COPYING $(OutDir)\licenses\theora.txt</Command>
+copy ..\COPYING $(OutDir)\licenses\theora.txt
+if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
+mkdir $(OutDir)\include\ogg
+copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+)</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
@@ -776,7 +808,11 @@ del /f /q $(OutDir)\licenses\theora.txt
 mkdir $(OutDir)\include\theora
 copy ..\include\theora\*.h $(OutDir)\include\theora
 mkdir $(OutDir)\licenses
-copy ..\COPYING $(OutDir)\licenses\theora.txt</Command>
+copy ..\COPYING $(OutDir)\licenses\theora.txt
+if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
+mkdir $(OutDir)\include\ogg
+copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+)</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
@@ -840,7 +876,11 @@ del /f /q $(OutDir)\licenses\theora.txt
 mkdir $(OutDir)\include\theora
 copy ..\include\theora\*.h $(OutDir)\include\theora
 mkdir $(OutDir)\licenses
-copy ..\COPYING $(OutDir)\licenses\theora.txt</Command>
+copy ..\COPYING $(OutDir)\licenses\theora.txt
+if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
+mkdir $(OutDir)\include\ogg
+copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+)</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
@@ -904,7 +944,11 @@ del /f /q $(OutDir)\licenses\theora.txt
 mkdir $(OutDir)\include\theora
 copy ..\include\theora\*.h $(OutDir)\include\theora
 mkdir $(OutDir)\licenses
-copy ..\COPYING $(OutDir)\licenses\theora.txt</Command>
+copy ..\COPYING $(OutDir)\licenses\theora.txt
+if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
+mkdir $(OutDir)\include\ogg
+copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+)</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
@@ -968,7 +1012,11 @@ del /f /q $(OutDir)\licenses\theora.txt
 mkdir $(OutDir)\include\theora
 copy ..\include\theora\*.h $(OutDir)\include\theora
 mkdir $(OutDir)\licenses
-copy ..\COPYING $(OutDir)\licenses\theora.txt</Command>
+copy ..\COPYING $(OutDir)\licenses\theora.txt
+if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
+mkdir $(OutDir)\include\ogg
+copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+)</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
@@ -1031,7 +1079,11 @@ del /f /q $(OutDir)\licenses\theora.txt
 mkdir $(OutDir)\include\theora
 copy ..\include\theora\*.h $(OutDir)\include\theora
 mkdir $(OutDir)\licenses
-copy ..\COPYING $(OutDir)\licenses\theora.txt</Command>
+copy ..\COPYING $(OutDir)\licenses\theora.txt
+if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
+mkdir $(OutDir)\include\ogg
+copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+)</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
@@ -1094,7 +1146,11 @@ del /f /q $(OutDir)\licenses\theora.txt
 mkdir $(OutDir)\include\theora
 copy ..\include\theora\*.h $(OutDir)\include\theora
 mkdir $(OutDir)\licenses
-copy ..\COPYING $(OutDir)\licenses\theora.txt</Command>
+copy ..\COPYING $(OutDir)\licenses\theora.txt
+if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
+mkdir $(OutDir)\include\ogg
+copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+)</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (

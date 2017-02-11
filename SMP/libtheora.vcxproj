@@ -443,6 +443,7 @@ del /f /q $(OutDir)\licenses\theora.txt
       <ModuleDefinitionFile>libtheora.def</ModuleDefinitionFile>
       <LargeAddressAware>true</LargeAddressAware>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include
@@ -500,6 +501,7 @@ del /f /q $(OutDir)\licenses\theora.txt
       <ModuleDefinitionFile>..\lib\theora.def</ModuleDefinitionFile>
       <LargeAddressAware>true</LargeAddressAware>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include
@@ -556,6 +558,7 @@ del /f /q $(OutDir)\licenses\theora.txt
       <AdditionalDependencies>oggd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>libtheora.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include
@@ -612,6 +615,7 @@ del /f /q $(OutDir)\licenses\theora.txt
       <AdditionalDependencies>liboggd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>..\lib\theora.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include
@@ -953,6 +957,7 @@ del /f /q $(OutDir)\licenses\theora.txt
       <ModuleDefinitionFile>libtheora.def</ModuleDefinitionFile>
       <LargeAddressAware>true</LargeAddressAware>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include
@@ -1022,6 +1027,7 @@ del /f /q $(OutDir)\licenses\theora.txt
       <ModuleDefinitionFile>..\lib\theora.def</ModuleDefinitionFile>
       <LargeAddressAware>true</LargeAddressAware>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include
@@ -1090,6 +1096,7 @@ del /f /q $(OutDir)\licenses\theora.txt
       <AdditionalDependencies>ogg.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>libtheora.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include
@@ -1158,6 +1165,7 @@ del /f /q $(OutDir)\licenses\theora.txt
       <AdditionalDependencies>libogg.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>..\lib\theora.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include

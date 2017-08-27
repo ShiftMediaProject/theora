@@ -329,22 +329,22 @@
       <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\theora
-copy ..\include\theora\*.h $(OutDir)\include\theora
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\theora
+copy ..\include\theora\*.h "$(OutDir)"\include\theora
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\theora.txt
-if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
-mkdir $(OutDir)\include\ogg
-copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+if exist "$(ProjectDir)"\..\..\prebuilt\include\ogg\ogg.h (
+mkdir "$(OutDir)"\include\ogg
+copy /y "$(ProjectDir)"\..\..\prebuilt\include\ogg\*.h "$(OutDir)"\include\ogg\
 )</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
 del ..\config.h
 )
-if exist $(OutDir)\include\theora (
-rd /s /q $(OutDir)\include\theora
+if exist "$(OutDir)"\include\theora (
+rd /s /q "$(OutDir)"\include\theora
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -354,8 +354,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\theora (
-rmdir /s /q $(OutDir)\include\theora
+      <Command>if exist "$(OutDir)"\include\theora (
+rmdir /s /q "$(OutDir)"\include\theora
 )
 if exist $(OutDir)\licenses\theora.txt (
 del /f /q $(OutDir)\licenses\theora.txt
@@ -384,22 +384,22 @@ del /f /q $(OutDir)\licenses\theora.txt
       <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\theora
-copy ..\include\theora\*.h $(OutDir)\include\theora
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\theora
+copy ..\include\theora\*.h "$(OutDir)"\include\theora
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\theora.txt
-if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
-mkdir $(OutDir)\include\ogg
-copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+if exist "$(ProjectDir)"\..\..\prebuilt\include\ogg\ogg.h (
+mkdir "$(OutDir)"\include\ogg
+copy /y "$(ProjectDir)"\..\..\prebuilt\include\ogg\*.h "$(OutDir)"\include\ogg\
 )</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
 del ..\config.h
 )
-if exist $(OutDir)\include\theora (
-rd /s /q $(OutDir)\include\theora
+if exist "$(OutDir)"\include\theora (
+rd /s /q "$(OutDir)"\include\theora
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -409,8 +409,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\theora (
-rmdir /s /q $(OutDir)\include\theora
+      <Command>if exist "$(OutDir)"\include\theora (
+rmdir /s /q "$(OutDir)"\include\theora
 )
 if exist $(OutDir)\licenses\theora.txt (
 del /f /q $(OutDir)\licenses\theora.txt
@@ -442,22 +442,22 @@ del /f /q $(OutDir)\licenses\theora.txt
       <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\theora
-copy ..\include\theora\*.h $(OutDir)\include\theora
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\theora
+copy ..\include\theora\*.h "$(OutDir)"\include\theora
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\theora.txt
-if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
-mkdir $(OutDir)\include\ogg
-copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+if exist "$(ProjectDir)"\..\..\prebuilt\include\ogg\ogg.h (
+mkdir "$(OutDir)"\include\ogg
+copy /y "$(ProjectDir)"\..\..\prebuilt\include\ogg\*.h "$(OutDir)"\include\ogg\
 )</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
 del ..\config.h
 )
-if exist $(OutDir)\include\theora (
-rd /s /q $(OutDir)\include\theora
+if exist "$(OutDir)"\include\theora (
+rd /s /q "$(OutDir)"\include\theora
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -467,8 +467,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\theora (
-rmdir /s /q $(OutDir)\include\theora
+      <Command>if exist "$(OutDir)"\include\theora (
+rmdir /s /q "$(OutDir)"\include\theora
 )
 if exist $(OutDir)\licenses\theora.txt (
 del /f /q $(OutDir)\licenses\theora.txt
@@ -500,22 +500,22 @@ del /f /q $(OutDir)\licenses\theora.txt
       <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\theora
-copy ..\include\theora\*.h $(OutDir)\include\theora
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\theora
+copy ..\include\theora\*.h "$(OutDir)"\include\theora
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\theora.txt
-if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
-mkdir $(OutDir)\include\ogg
-copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+if exist "$(ProjectDir)"\..\..\prebuilt\include\ogg\ogg.h (
+mkdir "$(OutDir)"\include\ogg
+copy /y "$(ProjectDir)"\..\..\prebuilt\include\ogg\*.h "$(OutDir)"\include\ogg\
 )</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
 del ..\config.h
 )
-if exist $(OutDir)\include\theora (
-rd /s /q $(OutDir)\include\theora
+if exist "$(OutDir)"\include\theora (
+rd /s /q "$(OutDir)"\include\theora
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -525,8 +525,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\theora (
-rmdir /s /q $(OutDir)\include\theora
+      <Command>if exist "$(OutDir)"\include\theora (
+rmdir /s /q "$(OutDir)"\include\theora
 )
 if exist $(OutDir)\licenses\theora.txt (
 del /f /q $(OutDir)\licenses\theora.txt
@@ -557,22 +557,22 @@ del /f /q $(OutDir)\licenses\theora.txt
       <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\theora
-copy ..\include\theora\*.h $(OutDir)\include\theora
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\theora
+copy ..\include\theora\*.h "$(OutDir)"\include\theora
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\theora.txt
-if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
-mkdir $(OutDir)\include\ogg
-copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+if exist "$(ProjectDir)"\..\..\prebuilt\include\ogg\ogg.h (
+mkdir "$(OutDir)"\include\ogg
+copy /y "$(ProjectDir)"\..\..\prebuilt\include\ogg\*.h "$(OutDir)"\include\ogg\
 )</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
 del ..\config.h
 )
-if exist $(OutDir)\include\theora (
-rd /s /q $(OutDir)\include\theora
+if exist "$(OutDir)"\include\theora (
+rd /s /q "$(OutDir)"\include\theora
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -582,8 +582,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\theora (
-rmdir /s /q $(OutDir)\include\theora
+      <Command>if exist "$(OutDir)"\include\theora (
+rmdir /s /q "$(OutDir)"\include\theora
 )
 if exist $(OutDir)\licenses\theora.txt (
 del /f /q $(OutDir)\licenses\theora.txt
@@ -614,22 +614,22 @@ del /f /q $(OutDir)\licenses\theora.txt
       <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\theora
-copy ..\include\theora\*.h $(OutDir)\include\theora
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\theora
+copy ..\include\theora\*.h "$(OutDir)"\include\theora
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\theora.txt
-if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
-mkdir $(OutDir)\include\ogg
-copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+if exist "$(ProjectDir)"\..\..\prebuilt\include\ogg\ogg.h (
+mkdir "$(OutDir)"\include\ogg
+copy /y "$(ProjectDir)"\..\..\prebuilt\include\ogg\*.h "$(OutDir)"\include\ogg\
 )</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
 del ..\config.h
 )
-if exist $(OutDir)\include\theora (
-rd /s /q $(OutDir)\include\theora
+if exist "$(OutDir)"\include\theora (
+rd /s /q "$(OutDir)"\include\theora
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -639,8 +639,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\theora (
-rmdir /s /q $(OutDir)\include\theora
+      <Command>if exist "$(OutDir)"\include\theora (
+rmdir /s /q "$(OutDir)"\include\theora
 )
 if exist $(OutDir)\licenses\theora.txt (
 del /f /q $(OutDir)\licenses\theora.txt
@@ -678,22 +678,22 @@ del /f /q $(OutDir)\licenses\theora.txt
       <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\theora
-copy ..\include\theora\*.h $(OutDir)\include\theora
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\theora
+copy ..\include\theora\*.h "$(OutDir)"\include\theora
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\theora.txt
-if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
-mkdir $(OutDir)\include\ogg
-copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+if exist "$(ProjectDir)"\..\..\prebuilt\include\ogg\ogg.h (
+mkdir "$(OutDir)"\include\ogg
+copy /y "$(ProjectDir)"\..\..\prebuilt\include\ogg\*.h "$(OutDir)"\include\ogg\
 )</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
 del ..\config.h
 )
-if exist $(OutDir)\include\theora (
-rd /s /q $(OutDir)\include\theora
+if exist "$(OutDir)"\include\theora (
+rd /s /q "$(OutDir)"\include\theora
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -703,8 +703,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\theora (
-rmdir /s /q $(OutDir)\include\theora
+      <Command>if exist "$(OutDir)"\include\theora (
+rmdir /s /q "$(OutDir)"\include\theora
 )
 if exist $(OutDir)\licenses\theora.txt (
 del /f /q $(OutDir)\licenses\theora.txt
@@ -742,22 +742,22 @@ del /f /q $(OutDir)\licenses\theora.txt
       <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\theora
-copy ..\include\theora\*.h $(OutDir)\include\theora
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\theora
+copy ..\include\theora\*.h "$(OutDir)"\include\theora
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\theora.txt
-if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
-mkdir $(OutDir)\include\ogg
-copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+if exist "$(ProjectDir)"\..\..\prebuilt\include\ogg\ogg.h (
+mkdir "$(OutDir)"\include\ogg
+copy /y "$(ProjectDir)"\..\..\prebuilt\include\ogg\*.h "$(OutDir)"\include\ogg\
 )</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
 del ..\config.h
 )
-if exist $(OutDir)\include\theora (
-rd /s /q $(OutDir)\include\theora
+if exist "$(OutDir)"\include\theora (
+rd /s /q "$(OutDir)"\include\theora
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -767,8 +767,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\theora (
-rmdir /s /q $(OutDir)\include\theora
+      <Command>if exist "$(OutDir)"\include\theora (
+rmdir /s /q "$(OutDir)"\include\theora
 )
 if exist $(OutDir)\licenses\theora.txt (
 del /f /q $(OutDir)\licenses\theora.txt
@@ -806,22 +806,22 @@ del /f /q $(OutDir)\licenses\theora.txt
       <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\theora
-copy ..\include\theora\*.h $(OutDir)\include\theora
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\theora
+copy ..\include\theora\*.h "$(OutDir)"\include\theora
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\theora.txt
-if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
-mkdir $(OutDir)\include\ogg
-copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+if exist "$(ProjectDir)"\..\..\prebuilt\include\ogg\ogg.h (
+mkdir "$(OutDir)"\include\ogg
+copy /y "$(ProjectDir)"\..\..\prebuilt\include\ogg\*.h "$(OutDir)"\include\ogg\
 )</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
 del ..\config.h
 )
-if exist $(OutDir)\include\theora (
-rd /s /q $(OutDir)\include\theora
+if exist "$(OutDir)"\include\theora (
+rd /s /q "$(OutDir)"\include\theora
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -831,8 +831,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\theora (
-rmdir /s /q $(OutDir)\include\theora
+      <Command>if exist "$(OutDir)"\include\theora (
+rmdir /s /q "$(OutDir)"\include\theora
 )
 if exist $(OutDir)\licenses\theora.txt (
 del /f /q $(OutDir)\licenses\theora.txt
@@ -870,22 +870,22 @@ del /f /q $(OutDir)\licenses\theora.txt
       <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\theora
-copy ..\include\theora\*.h $(OutDir)\include\theora
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\theora
+copy ..\include\theora\*.h "$(OutDir)"\include\theora
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\theora.txt
-if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
-mkdir $(OutDir)\include\ogg
-copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+if exist "$(ProjectDir)"\..\..\prebuilt\include\ogg\ogg.h (
+mkdir "$(OutDir)"\include\ogg
+copy /y "$(ProjectDir)"\..\..\prebuilt\include\ogg\*.h "$(OutDir)"\include\ogg\
 )</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
 del ..\config.h
 )
-if exist $(OutDir)\include\theora (
-rd /s /q $(OutDir)\include\theora
+if exist "$(OutDir)"\include\theora (
+rd /s /q "$(OutDir)"\include\theora
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -895,8 +895,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\theora (
-rmdir /s /q $(OutDir)\include\theora
+      <Command>if exist "$(OutDir)"\include\theora (
+rmdir /s /q "$(OutDir)"\include\theora
 )
 if exist $(OutDir)\licenses\theora.txt (
 del /f /q $(OutDir)\licenses\theora.txt
@@ -936,22 +936,22 @@ del /f /q $(OutDir)\licenses\theora.txt
       <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\theora
-copy ..\include\theora\*.h $(OutDir)\include\theora
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\theora
+copy ..\include\theora\*.h "$(OutDir)"\include\theora
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\theora.txt
-if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
-mkdir $(OutDir)\include\ogg
-copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+if exist "$(ProjectDir)"\..\..\prebuilt\include\ogg\ogg.h (
+mkdir "$(OutDir)"\include\ogg
+copy /y "$(ProjectDir)"\..\..\prebuilt\include\ogg\*.h "$(OutDir)"\include\ogg\
 )</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
 del ..\config.h
 )
-if exist $(OutDir)\include\theora (
-rd /s /q $(OutDir)\include\theora
+if exist "$(OutDir)"\include\theora (
+rd /s /q "$(OutDir)"\include\theora
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -961,8 +961,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\theora (
-rmdir /s /q $(OutDir)\include\theora
+      <Command>if exist "$(OutDir)"\include\theora (
+rmdir /s /q "$(OutDir)"\include\theora
 )
 if exist $(OutDir)\licenses\theora.txt (
 del /f /q $(OutDir)\licenses\theora.txt
@@ -1002,22 +1002,22 @@ del /f /q $(OutDir)\licenses\theora.txt
       <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\theora
-copy ..\include\theora\*.h $(OutDir)\include\theora
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\theora
+copy ..\include\theora\*.h "$(OutDir)"\include\theora
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\theora.txt
-if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
-mkdir $(OutDir)\include\ogg
-copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+if exist "$(ProjectDir)"\..\..\prebuilt\include\ogg\ogg.h (
+mkdir "$(OutDir)"\include\ogg
+copy /y "$(ProjectDir)"\..\..\prebuilt\include\ogg\*.h "$(OutDir)"\include\ogg\
 )</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
 del ..\config.h
 )
-if exist $(OutDir)\include\theora (
-rd /s /q $(OutDir)\include\theora
+if exist "$(OutDir)"\include\theora (
+rd /s /q "$(OutDir)"\include\theora
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -1027,8 +1027,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\theora (
-rmdir /s /q $(OutDir)\include\theora
+      <Command>if exist "$(OutDir)"\include\theora (
+rmdir /s /q "$(OutDir)"\include\theora
 )
 if exist $(OutDir)\licenses\theora.txt (
 del /f /q $(OutDir)\licenses\theora.txt
@@ -1067,22 +1067,22 @@ del /f /q $(OutDir)\licenses\theora.txt
       <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\theora
-copy ..\include\theora\*.h $(OutDir)\include\theora
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\theora
+copy ..\include\theora\*.h "$(OutDir)"\include\theora
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\theora.txt
-if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
-mkdir $(OutDir)\include\ogg
-copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+if exist "$(ProjectDir)"\..\..\prebuilt\include\ogg\ogg.h (
+mkdir "$(OutDir)"\include\ogg
+copy /y "$(ProjectDir)"\..\..\prebuilt\include\ogg\*.h "$(OutDir)"\include\ogg\
 )</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
 del ..\config.h
 )
-if exist $(OutDir)\include\theora (
-rd /s /q $(OutDir)\include\theora
+if exist "$(OutDir)"\include\theora (
+rd /s /q "$(OutDir)"\include\theora
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -1092,8 +1092,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\theora (
-rmdir /s /q $(OutDir)\include\theora
+      <Command>if exist "$(OutDir)"\include\theora (
+rmdir /s /q "$(OutDir)"\include\theora
 )
 if exist $(OutDir)\licenses\theora.txt (
 del /f /q $(OutDir)\licenses\theora.txt
@@ -1132,22 +1132,22 @@ del /f /q $(OutDir)\licenses\theora.txt
       <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\theora
-copy ..\include\theora\*.h $(OutDir)\include\theora
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\theora
+copy ..\include\theora\*.h "$(OutDir)"\include\theora
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\theora.txt
-if exist $(ProjectDir)\..\..\prebuilt\include\ogg\ogg.h (
-mkdir $(OutDir)\include\ogg
-copy /y $(ProjectDir)\..\..\prebuilt\include\ogg\*.h $(OutDir)\include\ogg\
+if exist "$(ProjectDir)"\..\..\prebuilt\include\ogg\ogg.h (
+mkdir "$(OutDir)"\include\ogg
+copy /y "$(ProjectDir)"\..\..\prebuilt\include\ogg\*.h "$(OutDir)"\include\ogg\
 )</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>if exist ..\config.h (
 del ..\config.h
 )
-if exist $(OutDir)\include\theora (
-rd /s /q $(OutDir)\include\theora
+if exist "$(OutDir)"\include\theora (
+rd /s /q "$(OutDir)"\include\theora
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -1157,8 +1157,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\theora (
-rmdir /s /q $(OutDir)\include\theora
+      <Command>if exist "$(OutDir)"\include\theora (
+rmdir /s /q "$(OutDir)"\include\theora
 )
 if exist $(OutDir)\licenses\theora.txt (
 del /f /q $(OutDir)\licenses\theora.txt

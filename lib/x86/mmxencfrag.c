@@ -6,12 +6,11 @@
  * IN 'COPYING'. PLEASE READ THESE TERMS BEFORE DISTRIBUTING.       *
  *                                                                  *
  * THE Theora SOURCE CODE IS COPYRIGHT (C) 2002-2009                *
- * by the Xiph.Org Foundation http://www.xiph.org/                  *
+ * by the Xiph.Org Foundation https://www.xiph.org/                 *
  *                                                                  *
  ********************************************************************
 
   function:
-  last mod: $Id: dsp_mmx.c 14579 2008-03-12 06:42:40Z xiphmont $
 
  ********************************************************************/
 #include <stddef.h>
@@ -65,7 +64,7 @@ unsigned oc_enc_frag_sad_mmxext(const unsigned char *_src,
     "paddw %%mm6,%%mm0\n\t"
     "paddw %%mm2,%%mm0\n\t"
     "movd %%mm0,%[ret]\n\t"
-    :[ret]"=a"(ret),[src]"+%r"(_src),[ref]"+r"(_ref),[ystride3]"=&r"(ystride3)
+    :[ret]"=a"(ret),[src]"+r"(_src),[ref]"+r"(_ref),[ystride3]"=&r"(ystride3)
     :[ystride]"r"((ptrdiff_t)_ystride)
   );
   return (unsigned)ret;
@@ -155,7 +154,7 @@ unsigned oc_enc_frag_sad2_thresh_mmxext(const unsigned char *_src,
     OC_SAD2_LOOP
     OC_SAD2_LOOP
     OC_SAD2_TAIL
-    :[ret]"=&a"(ret),[src]"+r"(_src),[ref1]"+%r"(_ref1),[ref2]"+r"(_ref2)
+    :[ret]"=&a"(ret),[src]"+r"(_src),[ref1]"+r"(_ref1),[ref2]"+r"(_ref2)
     :[ystride]"r"((ptrdiff_t)_ystride)
   );
   return (unsigned)ret;
@@ -522,7 +521,7 @@ static unsigned oc_int_frag_satd_mmxext(int *_dc,
        and %[ret2] with some of the inputs, since for once we don't write to
        them until after we're done using everything but %[buf].*/
     /*Note that _src_ystride and _ref_ystride must be given non-overlapping
-       constraints, otherewise if gcc can prove they're equal it will allocate
+       constraints, otherwise if gcc can prove they're equal it will allocate
        them to the same register (which is bad); _src and _ref face a similar
        problem, though those are never actually the same.*/
     :[ret]"=d"(ret),[ret2]"=r"(ret2),[dc]"=a"(dc),
@@ -653,7 +652,7 @@ void oc_int_frag_copy2_mmxext(unsigned char *_dst,int _dst_ystride,
     "psubb %%mm4,%%mm2\n\t"
     /*%%mm2 (row 7) is done, write it out.*/
     "movq %%mm2,(%[dst],%[dst_ystride])\n\t"
-    :[dst]"+r"(_dst),[src1]"+%r"(_src1),[src2]"+r"(_src2)
+    :[dst]"+r"(_dst),[src1]"+r"(_src1),[src2]"+r"(_src2)
     :[dst_ystride]"r"((ptrdiff_t)_dst_ystride),
      [src_ystride]"r"((ptrdiff_t)_src_ystride)
     :"memory"

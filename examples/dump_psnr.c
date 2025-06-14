@@ -6,12 +6,12 @@
  * IN 'COPYING'. PLEASE READ THESE TERMS BEFORE DISTRIBUTING.       *
  *                                                                  *
  * THE Theora SOURCE CODE IS COPYRIGHT (C) 2002-2009                *
- * by the Xiph.Org Foundation and contributors http://www.xiph.org/ *
+ * by the Xiph.Org Foundation and contributors                      *
+ * https://www.xiph.org/                                            *
  *                                                                  *
  ********************************************************************
 
   function: example dumpvid application; dumps Theora streams
-  last mod: $Id$
 
  ********************************************************************/
 
@@ -88,9 +88,9 @@ struct y4m_input{
   size_t            dst_buf_sz;
   /*The amount to read directly into the converted frame buffer.*/
   size_t            dst_buf_read_sz;
-  /*The size of the auxilliary buffer.*/
+  /*The size of the auxiliary buffer.*/
   size_t            aux_buf_sz;
-  /*The amount to read into the auxilliary buffer.*/
+  /*The amount to read into the auxiliary buffer.*/
   size_t            aux_buf_read_sz;
   y4m_convert_func  convert;
   unsigned char    *dst_buf;

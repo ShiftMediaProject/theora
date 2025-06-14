@@ -5,14 +5,14 @@
  * GOVERNED BY A BSD-STYLE SOURCE LICENSE INCLUDED WITH THIS SOURCE *
  * IN 'COPYING'. PLEASE READ THESE TERMS BEFORE DISTRIBUTING.       *
  *                                                                  *
- * THE Theora SOURCE CODE IS COPYRIGHT (C) 2002-2009                *
- * by the Xiph.Org Foundation and contributors http://www.xiph.org/ *
+ * THE Theora SOURCE CODE IS COPYRIGHT (C) 2002-2009,2025           *
+ * by the Xiph.Org Foundation and contributors                      *
+ * https://www.xiph.org/                                            *
  *                                                                  *
  ********************************************************************
 
   function: example encoder application; makes an Ogg Theora/Vorbis
             file from YUV4MPEG2 and WAV input
-  last mod: $Id$
 
  ********************************************************************/
 
@@ -133,9 +133,9 @@ char chroma_type[16];
 size_t y4m_dst_buf_sz;
 /*The amount to read directly into the converted frame buffer.*/
 size_t y4m_dst_buf_read_sz;
-/*The size of the auxilliary buffer.*/
+/*The size of the auxiliary buffer.*/
 size_t y4m_aux_buf_sz;
-/*The amount to read into the auxilliary buffer.*/
+/*The amount to read into the auxiliary buffer.*/
 size_t y4m_aux_buf_read_sz;
 
 /*The function used to perform chroma conversion.*/
@@ -173,8 +173,8 @@ static void usage(void){
           "                                  a minimum allowed quality.\n\n"
           "     --two-pass                   Compress input using two-pass rate control\n"
           "                                  This option requires that the input to the\n"
-          "                                  to the encoder is seekable and performs\n"
-          "                                  both passes automatically.\n\n"
+          "                                  encoder is seekable and performs both\n"
+          "                                  passes automatically.\n\n"
           "     --first-pass <filename>      Perform first-pass of a two-pass rate\n"
           "                                  controlled encoding, saving pass data to\n"
           "                                  <filename> for a later second pass\n\n"
@@ -189,22 +189,22 @@ static void usage(void){
           "                                  fidelity; 10 yields highest fidelity\n"
           "                                  but large files. '2' is a reasonable\n"
           "                                  default).\n\n"
-          "   -v --video-quality <n>         Theora quality selector from 0 to 10\n"
+          "  -v --video-quality <n>          Theora quality selector from 0 to 10\n"
           "                                  (0 yields smallest files but lowest\n"
           "                                  video quality. 10 yields highest\n"
           "                                  fidelity but large files).\n\n"
-          "   -s --aspect-numerator <n>      Aspect ratio numerator, default is 0\n"
+          "  -s --aspect-numerator <n>       Aspect ratio numerator, default is 0\n"
           "                                  or extracted from YUV input file\n"
-          "   -S --aspect-denominator <n>    Aspect ratio denominator, default is 0\n"
+          "  -S --aspect-denominator <n>     Aspect ratio denominator, default is 0\n"
           "                                  or extracted from YUV input file\n"
-          "   -f --framerate-numerator <n>   Frame rate numerator, can be extracted\n"
+          "  -f --framerate-numerator <n>    Frame rate numerator, can be extracted\n"
           "                                  from YUV input file. ex: 30000000\n"
-          "   -F --framerate-denominator <n> Frame rate denominator, can be extracted\n"
+          "  -F --framerate-denominator <n>  Frame rate denominator, can be extracted\n"
           "                                  from YUV input file. ex: 1000000\n"
           "                                  The frame rate nominator divided by this\n"
           "                                  determinates the frame rate in units per tick\n"
-          "   -k --keyframe-freq <n>         Keyframe frequency\n"
-          "   -z --speed <n>                 Sets the encoder speed level. Higher speed\n"
+          "  -k --keyframe-freq <n>          Keyframe frequency\n"
+          "  -z --speed <n>                  Sets the encoder speed level. Higher speed\n"
           "                                  levels favor quicker encoding over better\n"
           "                                  quality per bit. Depending on the encoding\n"
           "                                  mode, and the internal algorithms used,\n"
@@ -215,7 +215,7 @@ static void usage(void){
           "                                  specific and may change depending on the\n"
           "                                  current encoding mode (rate constrained,\n"
           "                                  two-pass, etc.).\n"
-          "   -d --buf-delay <n>             Buffer delay (in frames). Longer delays\n"
+          "  -d --buf-delay <n>              Buffer delay (in frames). Longer delays\n"
           "                                  allow smoother rate adaptation and provide\n"
           "                                  better overall quality, but require more\n"
           "                                  client side buffering and add latency. The\n"
@@ -223,11 +223,11 @@ static void usage(void){
           "                                  one-pass encoding (or somewhat larger if\n"
           "                                  --soft-target is used) and infinite for\n"
           "                                  two-pass encoding.\n"
-          "   -b --begin-time <h:m:s.d>      Begin encoding at offset into input\n"
-          "   -e --end-time <h:m:s.d>        End encoding at offset into input\n\n"
-          "   -q --quiet                     Don't print progress information.\n\n"
+          "  -b --begin-time <h:m:s.d>       Begin encoding at offset into input\n"
+          "  -e --end-time <h:m:s.d>         End encoding at offset into input\n\n"
+          "  -q --quiet                      Don't print progress information.\n\n"
 #if defined(OC_COLLECT_METRICS)
-          "   -m --metrics-filename          File in which to accumulate mode decision\n"
+          "  -m --metrics-filename           File in which to accumulate mode decision\n"
           "                                  metrics. Statistics from the current\n"
           "                                  encode will be merged with those already\n"
           "                                  in the file if it exists.\n\n"
@@ -775,6 +775,10 @@ static void id_file(char *f){
 
           audio=test;
           audio_ch=buffer[6]+(buffer[7]<<8);
+          if (0 >= audio_ch) {
+            fprintf(stderr,"Can only read WAV files with non-zero audio channels for now.\n");
+            exit(1);
+          }
           audio_hz=buffer[8]+(buffer[9]<<8)+
             (buffer[10]<<16)+(buffer[11]<<24);
 
@@ -1650,7 +1654,7 @@ int main(int argc,char *argv[]){
         We make this call just to set the encoder into 2-pass mode, because
          by default enabling two-pass sets the buffer delay to the whole file
          (because there's no way to explicitly request that behavior).
-        If we waited until we were actually encoding, it would overwite our
+        If we waited until we were actually encoding, it would overwrite our
          settings.*/
       if(th_encode_ctl(td,TH_ENCCTL_2PASS_IN,NULL,0)<0){
         fprintf(stderr,"Could not set up the second pass of two-pass mode.\n");
@@ -1732,21 +1736,25 @@ int main(int argc,char *argv[]){
       if(passno!=1)ogg_stream_packetin(&to,&op);
     }
     if(audio && passno!=1){
-      ogg_packet header;
-      ogg_packet header_comm;
-      ogg_packet header_code;
-      vorbis_analysis_headerout(&vd,&vc,&header,&header_comm,&header_code);
-      ogg_stream_packetin(&vo,&header); /* automatically placed in its own
-                                           page */
+      /* vorbis streams start with three standard header packets. */
+      ogg_packet id;
+      ogg_packet comment;
+      ogg_packet code;
+      if(vorbis_analysis_headerout(&vd,&vc,&id,&comment,&code)<0){
+        fprintf(stderr,"Internal Vorbis library error.\n");
+        exit(1);
+      }
+      /* id header is automatically placed in its own page */
+      ogg_stream_packetin(&vo,&id);
       if(ogg_stream_pageout(&vo,&og)!=1){
         fprintf(stderr,"Internal Ogg library error.\n");
         exit(1);
       }
       fwrite(og.header,1,og.header_len,outfile);
       fwrite(og.body,1,og.body_len,outfile);
-      /* remaining vorbis header packets */
-      ogg_stream_packetin(&vo,&header_comm);
-      ogg_stream_packetin(&vo,&header_code);
+      /* append remaining vorbis header packets */
+      ogg_stream_packetin(&vo,&comment);
+      ogg_stream_packetin(&vo,&code);
     }
     /* Flush the rest of our headers. This ensures
        the actual data in each stream will start

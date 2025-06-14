@@ -5,13 +5,13 @@
  * GOVERNED BY A BSD-STYLE SOURCE LICENSE INCLUDED WITH THIS SOURCE *
  * IN 'COPYING'. PLEASE READ THESE TERMS BEFORE DISTRIBUTING.       *
  *                                                                  *
- * THE Theora SOURCE CODE IS COPYRIGHT (C) 2002-2009                *
- * by the Xiph.Org Foundation and contributors http://www.xiph.org/ *
+ * THE Theora SOURCE CODE IS COPYRIGHT (C) 2002-2009,2025           *
+ * by the Xiph.Org Foundation and contributors                      *
+ * https://www.xiph.org/                                            *
  *                                                                  *
  ********************************************************************
 
   function:
-    last mod: $Id$
 
  ********************************************************************/
 
@@ -216,7 +216,7 @@ void oc_frag_recon_intra_mmx(unsigned char *_dst,int _ystride,
     :
     :[residue]"r"(_residue),
      [dst]"r"(_dst),
-     [dst4]"r"(_dst+(_ystride<<2)),
+     [dst4]"r"(_dst+(_ystride*4)),
      [ystride]"r"((ptrdiff_t)_ystride),
      [ystride3]"r"((ptrdiff_t)_ystride*3)
     :"memory"
@@ -355,7 +355,7 @@ void oc_frag_recon_inter2_mmx(unsigned char *_dst,const unsigned char *_src1,
       /*Advance dest ptr.*/
       "lea (%[dst],%[ystride],2),%[dst]\n\t"
      :[dst]"+r"(_dst),[residue]"+r"(_residue),
-      [src1]"+%r"(_src1),[src2]"+r"(_src2)
+      [src1]"+r"(_src1),[src2]"+r"(_src2)
      :[ystride]"r"((ptrdiff_t)_ystride)
      :"memory"
     );

@@ -5,14 +5,14 @@
  * GOVERNED BY A BSD-STYLE SOURCE LICENSE INCLUDED WITH THIS SOURCE *
  * IN 'COPYING'. PLEASE READ THESE TERMS BEFORE DISTRIBUTING.       *
  *                                                                  *
- * THE Theora SOURCE CODE IS COPYRIGHT (C) 2002-2009                *
- * by the Xiph.Org Foundation and contributors http://www.xiph.org/ *
+ * THE Theora SOURCE CODE IS COPYRIGHT (C) 2002-2009,2025           *
+ * by the Xiph.Org Foundation and contributors                      *
+ * https://www.xiph.org/                                            *
  *                                                                  *
  ********************************************************************
 
   function: example SDL player application; plays Ogg Theora files (with
             optional Vorbis audio second stream)
-  last mod: $Id$
 
  ********************************************************************/
 
@@ -23,7 +23,12 @@
    be simple video playback as well...
 
    A simple 'demux and write back streams' would have been easier,
-   it's true. */
+   it's true.
+
+   On Linux platforms with ALSA support instead of OSS, the aoss
+   helper program from the alsa-oss package can be used to emulate OSS
+   support to get the audio working.
+*/
 
 #if !defined(_GNU_SOURCE)
 #define _GNU_SOURCE
@@ -173,6 +178,9 @@ static void open_audio(){
   audiofd=open(AUDIO_DEVICE,O_RDWR);
   if(audiofd<0){
     fprintf(stderr,"Could not open audio device " AUDIO_DEVICE ".\n");
+#if defined(__linux__)
+    fprintf(stderr,"Perhaps aoss wrapper from alsa-oss can get audio working?\n");
+#endif /* __linux__ */
     exit(1);
   }
 
@@ -809,11 +817,9 @@ int main(int argc,char *const *argv){
       /* set up select wait on the audiobuffer and a timeout for video */
       struct timeval timeout;
       fd_set writefs;
-      fd_set empty;
       int n=0;
 
       FD_ZERO(&writefs);
-      FD_ZERO(&empty);
       if(audiofd>=0){
         FD_SET(audiofd,&writefs);
         n=audiofd+1;
@@ -836,11 +842,11 @@ int main(int argc,char *const *argv){
           timeout.tv_sec=milliseconds/1000;
           timeout.tv_usec=(milliseconds%1000)*1000;
 
-          n=select(n,&empty,&writefs,&empty,&timeout);
+          n=select(n,NULL,&writefs,NULL,&timeout);
           if(n)audio_calibrate_timer(0);
         }
       }else{
-        select(n,&empty,&writefs,&empty,NULL);
+        select(n,NULL,&writefs,NULL,NULL);
       }
     }
 

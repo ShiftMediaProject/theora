@@ -4,7 +4,7 @@ dnl ------------------------------------------------
 dnl Initialization and Versioning
 dnl ------------------------------------------------
 
-AC_INIT([libtheora],[1.2.0alpha1+git],[theora-dev@xiph.org])
+AC_INIT([libtheora],[1.2.0],[theora-dev@xiph.org])
 
 AC_CANONICAL_HOST
 
@@ -14,33 +14,43 @@ AM_MAINTAINER_MODE([enable])
 
 dnl we use doc_DATA in doc/Makefile.am which requires autoconf >= 2.60
 dnl to define docdir for us.
-AC_PREREQ(2.60)
+AC_PREREQ([2.71])
 
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 
-dnl Library versioning
-dnl CURRENT, REVISION, AGE
-dnl - library source changed -> increment REVISION
-dnl - interfaces added/removed/changed -> increment CURRENT, REVISION = 0
-dnl - interfaces added -> increment AGE
-dnl - interfaces removed -> AGE = 0
-
-TH_LIB_CURRENT=4
-TH_LIB_REVISION=0
+################################################################################
+# Set the shared versioning info, according to section 6.3 of the libtool info #
+# pages. CURRENT:REVISION:AGE must be updated immediately before each release: #
+#                                                                              #
+#   * If the library source code has changed at all since the last             #
+#     update, then increment TH*_LIB_REVISION (`C:R:A' becomes `C:r+1:A').     #
+#                                                                              #
+#   * If any interfaces have been added, removed, or changed since the         #
+#     last update, increment TH*_LIB_CURRENT, and set TH*_LIB_REVISION to 0.   #
+#                                                                              #
+#   * If any interfaces have been added since the last public release,         #
+#     then increment TH*_LIB_AGE.                                              #
+#                                                                              #
+#   * If any interfaces have been removed since the last public release,       #
+#     then set TH*_LIB_AGE to 0.                                               #
+#                                                                              #
+################################################################################
+TH_LIB_CURRENT=5
+TH_LIB_REVISION=1
 TH_LIB_AGE=4
 AC_SUBST(TH_LIB_CURRENT)
 AC_SUBST(TH_LIB_REVISION)
 AC_SUBST(TH_LIB_AGE)
 
-THDEC_LIB_CURRENT=2
-THDEC_LIB_REVISION=5
+THDEC_LIB_CURRENT=3
+THDEC_LIB_REVISION=1
 THDEC_LIB_AGE=1
 AC_SUBST(THDEC_LIB_CURRENT)
 AC_SUBST(THDEC_LIB_REVISION)
 AC_SUBST(THDEC_LIB_AGE)
 
-THENC_LIB_CURRENT=3
-THENC_LIB_REVISION=0
+THENC_LIB_CURRENT=4
+THENC_LIB_REVISION=1
 THENC_LIB_AGE=2
 AC_SUBST(THENC_LIB_CURRENT)
 AC_SUBST(THENC_LIB_REVISION)
@@ -63,8 +73,7 @@ AC_PROG_CPP
 CFLAGS="$cflags_save"
 
 AM_PROG_CC_C_O
-AC_LIBTOOL_WIN32_DLL
-LT_INIT
+LT_INIT([win32-dll])
 
 dnl Add parameters for aclocal
 AC_CONFIG_MACRO_DIR([m4])
@@ -131,7 +140,7 @@ _ACEOF
         if test -w conftest.tex; then rm conftest.tex; fi
         if test -w conftest.tex; then rm conftest.aux; fi
         if test -w conftest.pdf; then rm conftest.pdf; fi
-        if test "x$tex_pkg_ok" = "xyes"; then
+        if test "x$tex_pkg_ok" = "xyes" && test x$cross_compiling = xno; then
           BUILD_SPEC="true"
         fi
       fi
@@ -144,24 +153,17 @@ if test $BUILD_SPEC = "false"; then
 	AC_MSG_WARN([*** Format Specification will not built.])
 fi
 
-dnl Check for valgrind
-VALGRIND_ENVIRONMENT=""
-ac_enable_valgrind=no
+# Check for valgrind
 AC_ARG_ENABLE(valgrind-testing,
-     AS_HELP_STRING([--enable-valgrind-testing], [Enable running of tests inside Valgrind]),
-     [ ac_enable_valgrind=$enableval ], [ ac_enable_valgrind=no] )
-
-if test "x${ac_enable_valgrind}" = xyes ; then
-  if test "x${enable_shared}" = xyes ; then
-    VALGRIND_ENVIRONMENT="libtool --mode=execute "
-  fi
-
-  AC_CHECK_PROG(HAVE_VALGRIND, valgrind, yes, no)
-  if test "x$HAVE_VALGRIND" = xyes ; then
-    VALGRIND_ENVIRONMENT="$VALGRIND_ENVIRONMENT valgrind -q --leak-check=yes --show-reachable=yes --num-callers=100"
-    AC_SUBST(VALGRIND_ENVIRONMENT)
-    TESTS_INFO="Type 'make check' to run test suite. Tests will be run under:
-  ${VALGRIND_ENVIRONMENT}"
+     AS_HELP_STRING([--enable-valgrind-testing],[enable running of tests inside Valgrind (default disabled)]))
+if test "x$enable_valgrind_testing" = "xyes"
+then
+  AC_PATH_PROG(VALGRIND,valgrind,)
+  if test "x$VALGRIND" != "x"
+  then
+    VALGRIND="$VALGRIND -q --error-exitcode=99 --leak-check=full --show-reachable=yes --num-callers=50"
+    TESTS_INFO="Test suite will be run under:
+    ${VALGRIND}"
   else
     TESTS_INFO="Type 'make check' to run test suite (Valgrind not found)"
   fi
@@ -175,8 +177,20 @@ dnl --------------------------------------------------
 
 dnl Set some host options
 
+cc_compiler=unknown
+AC_COMPILE_IFELSE([AC_LANG_SOURCE([[#if ! __clang__
+                                    #error
+                                    #endif
+                                    ]])],
+                  cc_compiler=clang,
+                  [AC_COMPILE_IFELSE([AC_LANG_SOURCE([[#if ! __GNUC__
+                                                       #error
+                                                       #endif
+                                                       ]])],
+                                     cc_compiler=gcc, [])])
+
 cflags_save="$CFLAGS"
-if test -z "$GCC"; then
+if test $cc_compiler != "gcc" ; then
         case $host in 
         *)
                 DEBUG="-g -DDEBUG"
@@ -187,12 +201,24 @@ else
 
         case $host in 
         *)
-                DEBUG="-g -Wall -Wno-parentheses -DDEBUG -D__NO_MATH_INLINES"
-                CFLAGS="-Wall -Wno-parentheses -O3 -fomit-frame-pointer -finline-functions -funroll-loops"
-                PROFILE="-Wall -Wno-parentheses -pg -g -O3 -fno-inline-functions -DDEBUG";;
+                DEBUG="-g -Wall -Werror=uninitialized -Winit-self -Wno-parentheses -DDEBUG -D__NO_MATH_INLINES"
+                CFLAGS="-Wall -Werror=uninitialized -Winit-self -Wno-parentheses -O3 -fomit-frame-pointer -finline-functions -funroll-loops"
+                PROFILE="-Wall -Werror=uninitialized -Winit-self -Wno-parentheses -pg -g -O3 -fno-inline-functions -DDEBUG";;
         esac
 fi
 CFLAGS="$CFLAGS $cflags_save"
+
+AC_ARG_ENABLE(gcc-sanitizers,
+    AS_HELP_STRING([--enable-gcc-sanitizers], [Enable GCC sanitizers]),
+    [ ac_enable_gcc_sanitizers=$enableval ], [ ac_enable_gcc_sanitizers=no] )
+
+if test $cc_compiler = "gcc" && test "x${ac_enable_gcc_sanitizers}" = xyes; then
+  CFLAGS="${CFLAGS} -fsanitize=address -fsanitize=undefined -g"
+  LDFLAGS="${CFLAGS} -fsanitize=address"
+
+  TEST_ENV="env UBSAN_OPTIONS=print_stacktrace=1:halt_on_error=1"
+  AC_SUBST(TEST_ENV)
+fi
 
 cpu_x86_64=no
 cpu_x86_32=no
@@ -327,7 +353,7 @@ AM_CONDITIONAL([CPU_arm], [test x$cpu_arm = xyes])
 AM_CONDITIONAL([CPU_c64x], [test x$cpu_c64x = xyes])
 
 # Test whenever ld supports -version-script
-AC_PROG_LD
+LT_PATH_LD
 AC_PROG_LD_GNU
 AC_MSG_CHECKING([how to control symbol export])
 
@@ -388,16 +414,19 @@ dnl first check through pkg-config since it's more flexible
 
 dnl check for pkg-config itself so we don't try the m4 macro without pkg-config
 AC_CHECK_PROG(HAVE_PKG_CONFIG, pkg-config, yes)
+
+THEORA_LIBOGG_REQ_VERSION=1.3.4
+AC_SUBST(THEORA_LIBOGG_REQ_VERSION)
 if test "x$HAVE_PKG_CONFIG" = "xyes"
 then
-  PKG_CHECK_MODULES(OGG, ogg >= 1.1, HAVE_OGG=yes, HAVE_OGG=no)
+  PKG_CHECK_MODULES(OGG, ogg >= $THEORA_LIBOGG_REQ_VERSION, HAVE_OGG=yes, HAVE_OGG=no)
 fi
 if test "x$HAVE_OGG" = "xno"
 then
   dnl fall back to the old school test
   XIPH_PATH_OGG(, AC_MSG_ERROR([
     libogg is required to build this package!
-    please see http://www.xiph.org/ for how to
+    please see https://www.xiph.org/ for how to
     obtain a copy.
   ]))
   cflags_save=$CFLAGS
@@ -405,7 +434,7 @@ then
   CFLAGS="$CFLAGS $OGG_CFLAGS"
   LIBS="$LIBS $OGG_LIBS"
   AC_CHECK_FUNC(oggpackB_read, , [
-    AC_MSG_ERROR([newer libogg version (1.1 or later) required])
+    AC_MSG_ERROR([newer libogg version ($THEORA_LIBOGG_REQ_VERSION or later) required])
   ])
   CFLAGS=$cflags_save
   LIBS=$libs_save
@@ -502,6 +531,15 @@ if test "x${ac_enable_telemetry}" = xyes; then
    AC_SUBST(CAIRO_LIBS)
 fi
 
+dnl add safety rails for fuzzing
+AC_ARG_ENABLE(mem-constraint,
+    AS_HELP_STRING([--enable-mem-constraint], [Abort if size exceeds 16384x16384 (for fuzzing only)]),
+    [ ac_enable_mem_constraint=$enableval ], [ ac_enable_mem_constraint=no] )
+
+if test "x${ac_enable_mem_constraint}" = xyes; then
+   AC_DEFINE([HAVE_MEMORY_CONSTRAINT], [],  [Abort if size exceeds 16384x16384 (for fuzzing only)])
+fi
+
 dnl --------------------------------------------------
 dnl Overall build configuration options
 dnl --------------------------------------------------
@@ -549,9 +587,25 @@ dnl --------------------------------------------------
 dnl Check for library functions
 dnl --------------------------------------------------
 
-dnl OpenBSD needs -lcompat for ftime() used by dump_video.c
-AC_CHECK_LIB([compat], [ftime], [COMPAT_LIBS='-lcompat'])
-AC_SUBST(COMPAT_LIBS)
+# The dump_video example requires either clock_gettime or ftime.
+# clock_gettime is used only if time.h defines CLOCK_REALTIME and the
+# function is available in the standard library; on platforms such as
+# glibc < 2.17 where -lrt or another library would be required, ftime
+# will be used.
+AC_MSG_CHECKING([for clock_gettime])
+AC_LINK_IFELSE([
+  AC_LANG_PROGRAM([[#include <time.h>]], [[
+    struct timespec ts;
+    return clock_gettime(CLOCK_REALTIME, &ts);
+  ]])
+], [
+  AC_MSG_RESULT([yes])
+  AC_DEFINE([OP_HAVE_CLOCK_GETTIME], [1],
+    [Enable use of clock_gettime function])
+], [
+  AC_MSG_RESULT([no])
+  AC_SEARCH_LIBS(ftime, [compat], , )
+])
 
 dnl substitute the included getopt if the system doesn't support long options
 AC_CHECK_FUNC(getopt_long,
@@ -623,6 +677,7 @@ AC_MSG_RESULT([
     Encoding support: ........... ${ac_enable_encode}
     Assembly optimization: ...... ${cpu_optimization}
     Debugging telemetry: ........ ${ac_enable_telemetry}
+    Abort on huge files: ........ ${ac_enable_mem_constraint}
     Build example code: ......... ${ac_enable_examples}
     API Documentation: .......... ${doc_build}
     Format Documentation: ....... ${spec_build}

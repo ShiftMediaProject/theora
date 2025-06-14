@@ -6,7 +6,8 @@
  * IN 'COPYING'. PLEASE READ THESE TERMS BEFORE DISTRIBUTING.       *
  *                                                                  *
  * THE Theora SOURCE CODE IS COPYRIGHT (C) 2002-2009                *
- * by the Xiph.Org Foundation and contributors http://www.xiph.org/ *
+ * by the Xiph.Org Foundation and contributors                      *
+ * https://www.xiph.org/                                            *
  *                                                                  *
  ********************************************************************
 
@@ -581,7 +582,7 @@ static int open_audio(){
     return err;
 error:
     CloseAudioStream( aOutStream );
-    printf( "An error occured while opening the portaudio stream\n" );
+    printf( "An error occurred while opening the portaudio stream\n" );
     printf( "Error number: %d\n", err );
     printf( "Error message: %s\n", Pa_GetErrorText( err ) );
     return err;
@@ -595,7 +596,7 @@ static int start_audio(){
     return err;
 error:
     CloseAudioStream( aOutStream );
-    printf( "An error occured while opening the portaudio stream\n" );
+    printf( "An error occurred while opening the portaudio stream\n" );
     printf( "Error number: %d\n", err );
     printf( "Error message: %s\n", Pa_GetErrorText( err ) );
     return err;
@@ -609,7 +610,7 @@ static int audio_close(void){
     return err;
 error:
     Pa_Terminate();
-    printf( "An error occured while closing the portaudio stream\n" );
+    printf( "An error occurred while closing the portaudio stream\n" );
     printf( "Error number: %d\n", err );
     printf( "Error message: %s\n", Pa_GetErrorText( err ) );
     return err;
@@ -1006,7 +1007,7 @@ int main( int argc, char* argv[] ){
 	  frameNum++;
 
 	  /* check if this frame time has not passed yet.
-	     If the frame is late we need to decode additonal
+	     If the frame is late we need to decode additional
 	     ones and keep looping, since theora at this stage
 	     needs to decode all frames */
 	  now=get_time();
